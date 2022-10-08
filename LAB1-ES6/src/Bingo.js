@@ -48,11 +48,12 @@ export default class Bingo {
 
         // 🔥🔥🔥 TODO 2
         // loop through all the cards in the array and create a new instance of a Card()
-        // for()
-        // create a new card object
-        // let card = new Card(this.cards[i]);
-        // render the card
-        // card.render();
+        for (let i = 0; i<25; i++){
+            // console.log("25 🍕 on the board")
+            // console.log(new Card(this.cards.length));
+            let card = new Card(this.cards[i]);
+            card.render();
+        }
     }
 
     static checkWinner() {
