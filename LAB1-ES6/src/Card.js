@@ -36,7 +36,7 @@ export default class Card {
             // call checkWinner() on the Bingo class
             Bingo.checkWinner();
             // try to call the save() method on the Bingo class
-            Bingo.save();
+            Bingo.save(card);
         });
     }
 }
