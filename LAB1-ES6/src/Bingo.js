@@ -72,7 +72,7 @@ export default class Bingo {
         // }
     }
 
-    static save() {
+    static save(card) {
         // 🔥🔥🔥 TODO 7
         // save the cards that are done to localstorage
         // you can simply save an array with the card numbers like [1, 6, 8]
