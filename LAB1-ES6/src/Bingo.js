@@ -52,7 +52,7 @@ export default class Bingo {
             // console.log("25 🍕 on the board")
             // console.log(new Card(this.cards.length));
             let card = new Card(this.cards[i]);
-            card.render();
+            card.render(i);
         }
     }
 
