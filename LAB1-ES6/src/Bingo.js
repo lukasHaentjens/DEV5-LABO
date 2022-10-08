@@ -109,10 +109,12 @@ export default class Bingo {
 
         // check if localstorage item exists
         if (localStorage.getItem("bingo")) {
-            // let cardsWon = JSON.parse();
-            // JSON.parse() will convert the string [1, 7, 8] back to an array which you can loop
-            // loop over the numbers 1, 7, 8 and mark those cards as done by adding the right CSS class
-            // .bingo__card--done
+            let cardsWon = JSON.parse(localStorage.getItem("bingo"));
+            console.log("cards won", cardsWon);
+            // loop over the cards that are done and mark them as done
+            for (let i = 0; i < cardsWon.length; i++) {
+                document.querySelector(`[data-number="${cardsWon[i]}"]`).classList.add("bingo__card--done");
+            }
         }
     }
 }
