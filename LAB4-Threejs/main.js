@@ -1,6 +1,7 @@
 import './style.css'
 import * as THREE from 'three'
 import firstCube from './assets/classes/Cube.js'
+import Roof from "./assets/classes/Roof.js";
 
 // Create scene
 const scene = new THREE.Scene();
@@ -15,7 +16,8 @@ document.body.appendChild( renderer.domElement );
 
 // Create firstGeometry
 let firstGeometry = new firstCube(0, 0.5, 0, 1, 0x00ff00);
-scene.add(firstGeometry.mesh);
+let roof = new Roof();
+scene.add(firstGeometry.mesh , roof.mesh);
 
 
 camera.position.z = 5;
