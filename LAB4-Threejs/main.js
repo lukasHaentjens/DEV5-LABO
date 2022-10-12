@@ -14,7 +14,7 @@ renderer.setSize( window.innerWidth, window.innerHeight );
 document.body.appendChild( renderer.domElement );
 
 // Create firstGeometry
-let firstGeometry = new firstCube(0, 0, 0, 1, 0x00ff00);
+let firstGeometry = new firstCube(0, 0.5, 0, 1, 0x00ff00);
 scene.add(firstGeometry.mesh);
 
 
