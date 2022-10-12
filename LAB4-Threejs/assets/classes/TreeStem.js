@@ -1,7 +1,7 @@
 import * as THREE from 'three';
 
- export default class TreeStem {
-    constructor(x,y,z) {
+export default class TreeStem {
+    constructor(x, y, z) {
         // Create stem
         this.x = x;
         this.y = y;

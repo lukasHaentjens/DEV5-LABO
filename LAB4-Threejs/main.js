@@ -34,13 +34,22 @@ scene.add( pointLightHelper );
 let firstGeometry = new firstCube(0, 0.5, 0, 1, 0x00ff00);
 scene.add(firstGeometry.mesh);
 
-// Create TreeStem
-let treeStem = new TreeStem(1, 0.65, 1);
-scene.add(treeStem.mesh);
 
-// Create TreeLeaf
-let treeLeaf = new TreeLeaf(1, 1.65, 1);
-scene.add(treeLeaf.mesh);
+// Generate trees
+for (let i = 0; i < 20; i++) {
+
+    const signX = Math.random() > 0.5 ? 1 : -1;
+    const randomX = Math.random() * 10*signX;
+
+    const signY = Math.random() > 0.5 ? 1 : -1;
+    const randomY = Math.random() * 10*signY;
+
+    let treeStem = new TreeStem(randomX, 0.65, randomY);
+    scene.add(treeStem.mesh);
+
+    let treeLeaf = new TreeLeaf(randomX, 1.65, randomY);
+    scene.add(treeLeaf.mesh);
+}
 
 // Create roof
 let roof = new Roof();
