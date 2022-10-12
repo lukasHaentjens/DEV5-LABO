@@ -3,6 +3,7 @@ import * as THREE from 'three'
 import firstCube from './assets/classes/Cube.js'
 import Roof from "./assets/classes/Roof.js"
 import TreeStem from "./assets/classes/TreeStem.js"
+import TreeLeaf from "./assets/classes/TreeLeaf.js"
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js'
 
 // Create scene
@@ -36,6 +37,10 @@ scene.add(firstGeometry.mesh);
 // Create TreeStem
 let treeStem = new TreeStem(1, 0.65, 1);
 scene.add(treeStem.mesh);
+
+// Create TreeLeaf
+let treeLeaf = new TreeLeaf(1, 1.65, 1);
+scene.add(treeLeaf.mesh);
 
 // Create roof
 let roof = new Roof();
