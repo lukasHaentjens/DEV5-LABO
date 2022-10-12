@@ -1,6 +1,6 @@
 import './style.css'
 import * as THREE from 'three'
-import firstCube from './assets/classes/Cube.js'
+import HouseBase from './assets/classes/HouseBase.js'
 import Roof from "./assets/classes/Roof.js"
 import TreeStem from "./assets/classes/TreeStem.js"
 import TreeLeaf from "./assets/classes/TreeLeaf.js"
@@ -31,8 +31,8 @@ const pointLightHelper = new THREE.PointLightHelper( pointLight, 1 );
 scene.add( pointLightHelper );
 
 // Create firstGeometry
-let firstGeometry = new firstCube(0, 0.5, 0, 1, 0x00ff00);
-scene.add(firstGeometry.mesh);
+let houseBase = new HouseBase(0, 0.5, 0, 1, 0x00ff00);
+scene.add(houseBase.mesh);
 
 
 // Generate trees
@@ -49,7 +49,16 @@ for (let i = 0; i < 20; i++) {
 
     let treeLeaf = new TreeLeaf(randomX, 1.65, randomY);
     scene.add(treeLeaf.mesh);
+
+
 }
+
+// Create plane
+const planeGeometry = new THREE.PlaneGeometry( 20, 20, 32 );
+const planeMaterial = new THREE.MeshLambertMaterial( {color: 0x00ff00, side: THREE.DoubleSide} );
+const plane = new THREE.Mesh( planeGeometry, planeMaterial );
+plane.rotation.x = Math.PI / 2;
+scene.add( plane );
 
 // Create roof
 let roof = new Roof();

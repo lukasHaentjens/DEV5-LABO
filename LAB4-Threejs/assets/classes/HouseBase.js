@@ -1,7 +1,6 @@
 import * as THREE from 'three'
-import {color} from "three/nodes";
 
-export default class firstCube {
+export default class HouseBase {
     constructor(x,y,z,size,color) {
         this.x = x;
         this.y = y;
