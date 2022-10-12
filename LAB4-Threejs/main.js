@@ -2,6 +2,7 @@ import './style.css'
 import * as THREE from 'three'
 import firstCube from './assets/classes/Cube.js'
 import Roof from "./assets/classes/Roof.js";
+import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
 
 // Create scene
 const scene = new THREE.Scene();
@@ -14,6 +15,10 @@ const renderer = new THREE.WebGLRenderer();
 renderer.setSize( window.innerWidth, window.innerHeight );
 document.body.appendChild( renderer.domElement );
 
+// Create controls
+const controls = new OrbitControls( camera, renderer.domElement );
+controls.update();
+
 // Create firstGeometry
 let firstGeometry = new firstCube(0, 0.5, 0, 1, 0x00ff00);
 let roof = new Roof();
@@ -24,7 +29,9 @@ camera.position.z = 5;
 
 function animate() {
     requestAnimationFrame( animate );
+    controls.update();
     renderer.render( scene, camera );
+
 }
 
 animate();
