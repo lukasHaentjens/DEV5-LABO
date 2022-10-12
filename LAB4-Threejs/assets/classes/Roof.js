@@ -6,5 +6,6 @@ export default class Roof {
         this.material = new THREE.MeshLambertMaterial( {color: 0xffff00} );
         this.mesh = new THREE.Mesh( this.geometry, this.material );
         this.mesh.position.set(0, 1.2, 0);
+        this.mesh.rotation.y = Math.PI / 4;
     }
 }
