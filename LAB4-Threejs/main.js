@@ -19,6 +19,10 @@ document.body.appendChild( renderer.domElement );
 
 // Create controls
 const controls = new OrbitControls( camera, renderer.domElement );
+// Only positive orbit axis
+controls.enableDamping = true;
+controls.enablePan = false;
+controls.maxPolarAngle = Math.PI / 2.1;
 controls.update();
 
 // Add point light
