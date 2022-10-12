@@ -19,6 +19,15 @@ document.body.appendChild( renderer.domElement );
 const controls = new OrbitControls( camera, renderer.domElement );
 controls.update();
 
+// Add point light
+const pointLight = new THREE.PointLight( 0xffffff, 1 );
+pointLight.position.set( 3, 3, 3 );
+scene.add( pointLight );
+
+// Add point light helper
+const pointLightHelper = new THREE.PointLightHelper( pointLight, 1 );
+scene.add( pointLightHelper );
+
 // Create firstGeometry
 let firstGeometry = new firstCube(0, 0.5, 0, 1, 0x00ff00);
 let roof = new Roof();
