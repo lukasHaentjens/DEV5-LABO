@@ -1,8 +1,9 @@
 import './style.css'
 import * as THREE from 'three'
 import firstCube from './assets/classes/Cube.js'
-import Roof from "./assets/classes/Roof.js";
-import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
+import Roof from "./assets/classes/Roof.js"
+import TreeStem from "./assets/classes/TreeStem.js"
+import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js'
 
 // Create scene
 const scene = new THREE.Scene();
@@ -30,9 +31,15 @@ scene.add( pointLightHelper );
 
 // Create firstGeometry
 let firstGeometry = new firstCube(0, 0.5, 0, 1, 0x00ff00);
-let roof = new Roof();
-scene.add(firstGeometry.mesh , roof.mesh);
+scene.add(firstGeometry.mesh);
 
+// Create TreeStem
+let treeStem = new TreeStem(1, 0.65, 1);
+scene.add(treeStem.mesh);
+
+// Create roof
+let roof = new Roof();
+scene.add(roof.mesh);
 
 camera.position.z = 5;
 
