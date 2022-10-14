@@ -40,6 +40,12 @@ scene.add( pointLightHelper );
 let houseBase = new HouseBase(0, 0.5, 0, 1, 0x00ff00);
 scene.add(houseBase.mesh);
 
+// Add sky around the scene
+const skyGeometry = new THREE.SphereGeometry( 30, 32, 32 );
+const skyMaterial = new THREE.MeshBasicMaterial( {color: 0x87ceeb, side: THREE.BackSide} );
+const sky = new THREE.Mesh( skyGeometry, skyMaterial );
+scene.add( sky );
+
 
 // Generate bushes
 for (let i = 0; i < 10; i++) {
