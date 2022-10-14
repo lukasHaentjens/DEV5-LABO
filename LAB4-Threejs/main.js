@@ -51,12 +51,15 @@ scene.add( sky );
 
 // Generate bushes
 for (let i = 0; i < 10; i++) {
-    let x = Math.random() * 20 - 10;
-    let z = Math.random() * 20 - 10;
+    const signX = Math.random() > 0.5 ? 1 : -1;
+    const randomX = Math.random() * 100*signX;
+
+    const signZ = Math.random() > 0.5 ? 1 : -1;
+    const randomZ = Math.random() * 100*signZ;
 
     // Load in bush parts
-    let bushBig = new BushBig(x, 0, z, 0.5, 0x00ff00);
-    let bushSmall = new BushSmall(x, 0, z, 0.5, 0x00ff00);
+    let bushBig = new BushBig(signX, 0, signZ, 0.5, 0x00ff00);
+    let bushSmall = new BushSmall(signX, 0, signZ, 0.5, 0x00ff00);
 
     // Create bush group
     const bush = new THREE.Group();
