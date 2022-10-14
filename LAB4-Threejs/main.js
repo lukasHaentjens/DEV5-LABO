@@ -4,6 +4,8 @@ import HouseBase from './assets/classes/HouseBase.js'
 import Roof from "./assets/classes/Roof.js"
 import TreeStem from "./assets/classes/TreeStem.js"
 import TreeLeaf from "./assets/classes/TreeLeaf.js"
+import BushBig from "./assets/classes/BushBig.js";
+import BushSmall from "./assets/classes/BushSmall.js";
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js'
 
 // Create scene
@@ -39,6 +41,26 @@ let houseBase = new HouseBase(0, 0.5, 0, 1, 0x00ff00);
 scene.add(houseBase.mesh);
 
 
+// Generate bushes
+for (let i = 0; i < 10; i++) {
+    let x = Math.random() * 20 - 10;
+    let z = Math.random() * 20 - 10;
+
+    // Load in bush parts
+    let bushBig = new BushBig(x, 0, z, 0.5, 0x00ff00);
+    let bushSmall = new BushSmall(x, 0, z, 0.5, 0x00ff00);
+
+    // Create bush group
+    const bush = new THREE.Group();
+    bush.add(bushBig.mesh);
+    bush.add(bushSmall.mesh);
+    // Rotate bush random
+    bush.rotation.y = Math.random() * Math.PI * 2;
+
+    // Add bush to scene
+    scene.add(bush);
+}
+
 // Generate trees
 for (let i = 0; i < 20; i++) {
 
@@ -48,11 +70,15 @@ for (let i = 0; i < 20; i++) {
     const signY = Math.random() > 0.5 ? 1 : -1;
     const randomY = Math.random() * 10*signY;
 
+    // Load in tree parts
     let treeStem = new TreeStem(randomX, 0.65, randomY);
-    scene.add(treeStem.mesh);
-
     let treeLeaf = new TreeLeaf(randomX, 1.65, randomY);
-    scene.add(treeLeaf.mesh);
+
+    // Create tree group
+    const tree = new THREE.Group();
+    tree.add(treeStem.mesh);
+    tree.add(treeLeaf.mesh);
+    scene.add(tree);
 
 
 }
