@@ -76,10 +76,10 @@ for (let i = 0; i < 500; i++) {
 for (let i = 0; i < 100; i++) {
 
     const signX = Math.random() > 0.5 ? 1 : -1;
-    const randomX = Math.random() * 100*signX;
+    const randomX = Math.random() * 25*signX;
 
     const signZ = Math.random() > 0.5 ? 1 : -1;
-    const randomZ = Math.random() * 100 * signZ;
+    const randomZ = Math.random() * 25 * signZ;
 
     // Load in tree parts
     let treeStem = new TreeStem(randomX, 0.65, randomZ);
