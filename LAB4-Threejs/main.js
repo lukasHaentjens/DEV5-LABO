@@ -90,7 +90,7 @@ for (let i = 0; i < 20; i++) {
 }
 
 // Create plane
-const planeGeometry = new THREE.PlaneGeometry( 20, 20, 32 );
+const planeGeometry = new THREE.PlaneGeometry( 100, 100, 32 );
 const planeMaterial = new THREE.MeshLambertMaterial( {color: 0x00ff00, side: THREE.DoubleSide} );
 const plane = new THREE.Mesh( planeGeometry, planeMaterial );
 plane.rotation.x = Math.PI / 2;
