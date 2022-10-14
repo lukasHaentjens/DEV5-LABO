@@ -73,17 +73,17 @@ for (let i = 0; i < 500; i++) {
 }
 
 // Generate trees
-for (let i = 0; i < 20; i++) {
+for (let i = 0; i < 100; i++) {
 
     const signX = Math.random() > 0.5 ? 1 : -1;
-    const randomX = Math.random() * 10*signX;
+    const randomX = Math.random() * 100*signX;
 
-    const signY = Math.random() > 0.5 ? 1 : -1;
-    const randomY = Math.random() * 10*signY;
+    const signZ = Math.random() > 0.5 ? 1 : -1;
+    const randomZ = Math.random() * 100 * signZ;
 
     // Load in tree parts
-    let treeStem = new TreeStem(randomX, 0.65, randomY);
-    let treeLeaf = new TreeLeaf(randomX, 1.65, randomY);
+    let treeStem = new TreeStem(randomX, 0.65, randomZ);
+    let treeLeaf = new TreeLeaf(randomX, 1.65, randomZ);
 
     // Create tree group
     const tree = new THREE.Group();
