@@ -21,6 +21,8 @@ document.body.appendChild( renderer.domElement );
 
 // Create controls
 const controls = new OrbitControls( camera, renderer.domElement );
+// Max zoom out
+controls.maxDistance = 30;
 // Only positive orbit axis
 controls.enableDamping = true;
 controls.enablePan = false;
