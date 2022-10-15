@@ -7,7 +7,10 @@ export default class Amazon {
 
     getClothes(weather) {
         switch (weather) {
-            case "Sunny" || "Clear":
+            case "Clear":
+                this.keyWord = "Sunscreen";
+                break;
+            case "Sunny":
                 this.keyWord = "cap";
                 break;
             case "Partly cloudy":
