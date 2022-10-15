@@ -1,6 +1,5 @@
 import Amazon from "./Amazon.js";
 
-// Api key for asos: 8bad7b9159mshe64915501abe39bp17e52bjsn11ce99767a19
 const amazon = new Amazon('8bad7b9159mshe64915501abe39bp17e52bjsn11ce99767a19');
 amazon.getClothes();
 
