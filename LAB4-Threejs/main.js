@@ -9,12 +9,15 @@ import BushBig from "./assets/classes/BushBig.js"
 import BushSmall from "./assets/classes/BushSmall.js"
 import Rocks from "./assets/classes/Rocks.js"
 import Clouds from "./assets/classes/Clouds.js"
+import {GLTFLoader} from "three/examples/jsm/loaders/GLTFLoader"
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js'
 import { FontLoader } from 'three/examples/jsm/loaders/FontLoader.js'
 import { TextGeometry } from 'three/examples/jsm/geometries/TextGeometry.js'
 
 // Create scene
 const scene = new THREE.Scene();
+
+// texture loader
 
 // Font loader
 const fontLoader = new FontLoader();
@@ -26,6 +29,31 @@ const camera = new THREE.PerspectiveCamera( 75, window.innerWidth / window.inner
 const renderer = new THREE.WebGLRenderer();
 renderer.setSize( window.innerWidth, window.innerHeight );
 document.body.appendChild( renderer.domElement );
+
+// Load gltf
+let grass;
+const gltfLoader = new GLTFLoader();
+gltfLoader.load(
+    // resource URL
+    'assets/models/grass-2/scene.gltf',
+    // called when the resource is loaded
+    ( gltf ) => {
+        gltf.scene.position.set(0,0,0);
+        grass = gltf.scene;
+        scene.add( gltf.scene );
+        animate();
+    }
+);
+
+// loop grass floor
+for (let i = 0; i < 10; i++) {
+    for (let j = 0; j < 10; j++) {
+        const grassClone = grass.clone();
+        grassClone.position.set(i*10,0,j*10);
+        scene.add(grassClone);
+    }
+}
+
 
 // Create controls
 const controls = new OrbitControls( camera, renderer.domElement );
