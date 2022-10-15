@@ -47,10 +47,15 @@ export default class Amazon {
         fetch(url, options)
             .then(response => response.json())
             .then(data => {
+                console.log(data);
+                // Get first product thumbnail
                 let imgSrc = data.products[0].thumbnail;
-                console.log(imgSrc);
                 const img = document.querySelector('.amazon--img');
                 img.src = imgSrc;
+                // Get first product link
+                let link = data.products[0].url;
+                const a = document.querySelector('.amazon--link');
+                a.href = link;
             })
             .catch(err => console.error(err));
     }
