@@ -21,6 +21,17 @@ export default class Weather {
         console.log(url);
         fetch(url)
             .then(response => response.json())
-            .then(data => console.log(data));
+            .then(data => {
+                console.log(data);
+                this.weatherDisplay(data);
+            });
+    }
+    weatherDisplay(data) {
+        const title = document.querySelector('.weather--status');
+
+        title.innerHTML = data.current.condition.text;
+
+        this.weather = data.text;
+        console.log("Display weather function " + this.weather);
     }
 }
