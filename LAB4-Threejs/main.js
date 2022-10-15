@@ -38,7 +38,7 @@ gltfLoader.load(
     'assets/models/grass-2/scene.gltf',
     // called when the resource is loaded
     ( gltf ) => {
-        gltf.scene.position.set(0,0,0);
+        gltf.scene.position.set(1,0,1);
         grass = gltf.scene;
         scene.add( gltf.scene );
         animate();
