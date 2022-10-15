@@ -1,5 +1,6 @@
 import Asos from "./Asos.js";
 
+// Api key for asos: 8bad7b9159mshe64915501abe39bp17e52bjsn11ce99767a19
 const asos = new Asos('x');
 asos.getClothes();
 
