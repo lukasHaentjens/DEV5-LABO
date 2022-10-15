@@ -2,14 +2,15 @@ import './style.css'
 import * as THREE from 'three'
 import HouseBase from './assets/classes/HouseBase.js'
 import Roof from "./assets/classes/Roof.js"
-import Card from "./assets/classes/Card.js";
+import Card from "./assets/classes/Card.js"
 import TreeStem from "./assets/classes/TreeStem.js"
 import TreeLeaf from "./assets/classes/TreeLeaf.js"
-import BushBig from "./assets/classes/BushBig.js";
-import BushSmall from "./assets/classes/BushSmall.js";
-import Rocks from "./assets/classes/Rocks.js";
+import BushBig from "./assets/classes/BushBig.js"
+import BushSmall from "./assets/classes/BushSmall.js"
+import Rocks from "./assets/classes/Rocks.js"
+import Clouds from "./assets/classes/Clouds.js"
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js'
-import { FontLoader } from 'three/examples/jsm/loaders/FontLoader.js';
+import { FontLoader } from 'three/examples/jsm/loaders/FontLoader.js'
 import { TextGeometry } from 'three/examples/jsm/geometries/TextGeometry.js'
 
 // Create scene
@@ -79,9 +80,18 @@ const skyMaterial = new THREE.MeshBasicMaterial( {color: 0x87ceeb, side: THREE.B
 const sky = new THREE.Mesh( skyGeometry, skyMaterial );
 scene.add( sky );
 
+// Load in clouds
+let clouds = new Clouds();
+scene.add(clouds.mesh);
+
+// circulate cloud
+let cloudSpeed = 0.01;
+function animateClouds() {
+    clouds.mesh.rotation.y += cloudSpeed;
+}
 
 // Generate bushes
-for (let i = 0; i < 500; i++) {
+for (let i = 0; i < 200; i++) {
     const signX = Math.random() > 0.5 ? 1 : -1;
     const randomX = Math.random() * 100 * signX;
 
@@ -104,7 +114,7 @@ for (let i = 0; i < 500; i++) {
 }
 
 // Generate rocks
-for (let i = 0; i < 500; i++) {
+for (let i = 0; i < 200; i++) {
 
     const rocks = new Rocks();
     scene.add (rocks.mesh);
@@ -150,6 +160,7 @@ function animate() {
     requestAnimationFrame( animate );
     controls.update();
     renderer.render( scene, camera );
+    animateClouds();
 
 }
 
