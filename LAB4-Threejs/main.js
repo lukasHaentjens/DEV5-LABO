@@ -6,6 +6,8 @@ import TreeStem from "./assets/classes/TreeStem.js"
 import TreeLeaf from "./assets/classes/TreeLeaf.js"
 import BushBig from "./assets/classes/BushBig.js";
 import BushSmall from "./assets/classes/BushSmall.js";
+import RockBig from "./assets/classes/RockBig.js";
+import RockSmall from "./assets/classes/RockSmall.js";
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js'
 
 // Create scene
@@ -70,6 +72,29 @@ for (let i = 0; i < 500; i++) {
 
     // Add bush to scene
     scene.add(bush);
+}
+
+// Generate rocks
+for (let i = 0; i < 500; i++) {
+    const signX = Math.random() > 0.5 ? 1 : -1;
+    const randomX = Math.random() * 100 * signX;
+
+    const signZ = Math.random() > 0.5 ? 1 : -1;
+    const randomZ = Math.random() * 100 * signZ;
+
+    // Load in rock parts
+    let rockBig = new RockBig(randomX, 0, randomZ, 0.5, 0x00ff00);
+    let rockSmall = new RockSmall(randomX+0.3, 0, randomZ+0.3, 0.5, 0x00ff00);
+
+    // Create rock group
+    const rock = new THREE.Group();
+    rock.add(rockBig.mesh);
+    rock.add(rockSmall.mesh);
+    // Rotate rock random
+    rock.rotation.y = Math.random() * Math.PI * 2;
+
+    // Add rock to scene
+    scene.add(rock);
 }
 
 // Generate trees
