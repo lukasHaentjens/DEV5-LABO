@@ -1,40 +1,40 @@
-import Weather from "./Weather.js";
-
 export default class Amazon {
-    constructor(api_key) {
+    constructor(api_key, weather) {
         this.apiKey = api_key;
+        this.getClothes(weather);
         console.log("Asos class initialized" + this.apiKey);
     }
 
     getClothes(weather) {
-        console.log("hello");
-
         switch (weather) {
-            case "Sunny":
-                console.log("Sunny");
+            case "Sunny" || "Clear":
+                this.keyWord = "cap";
                 break;
             case "Partly cloudy":
-                console.log("Partly cloudy");
+                this.keyWord = "sunglasses";
                 break;
             case "Cloudy":
-                console.log("Cloudy");
+                this.keyWord = "t-shirt";
                 break;
             case "Light rain":
-                console.log("Light rain");
+                this.keyWord = "umbrella";
                 break;
             case "Moderate rain":
-                console.log("Moderate rain");
+                this.keyWord = "raincoat";
                 break;
             case "Heavy rain":
-                console.log("Heavy rain");
+                this.keyWord = "submarine";
                 break;
             case "Overcast":
+                this.keyWord = "banana";
                 console.log("Overcast");
                 break;
             default:
                 console.log("Default");
                 break;
         }
+
+        const url = `https://amazon-product-reviews-keywords.p.rapidapi.com/product/search?keyword=${this.keyWord}&country=US`;
 
         const options = {
             method: 'GET',
@@ -44,7 +44,7 @@ export default class Amazon {
             }
         };
 
-        fetch(`https://amazon-product-reviews-keywords.p.rapidapi.com/product/search?keyword=iphone&country=US&category=aps`, options)
+        fetch(url, options)
             .then(response => response.json())
             .then(data => {
                 let imgSrc = data.products[0].thumbnail;
