@@ -38,21 +38,13 @@ gltfLoader.load(
     'assets/models/grass-2/scene.gltf',
     // called when the resource is loaded
     ( gltf ) => {
-        gltf.scene.position.set(1,0,1);
+        gltf.scene.position.set(1,0,0);
+        gltf.scene.scale.set(0.01,0.01,0.01);
         grass = gltf.scene;
         scene.add( gltf.scene );
         animate();
     }
 );
-
-// loop grass floor
-for (let i = 0; i < 10; i++) {
-    for (let j = 0; j < 10; j++) {
-        const grassClone = grass.clone();
-        grassClone.position.set(i*10,0,j*10);
-        scene.add(grassClone);
-    }
-}
 
 
 // Create controls
