@@ -2,15 +2,21 @@ import './style.css'
 import * as THREE from 'three'
 import HouseBase from './assets/classes/HouseBase.js'
 import Roof from "./assets/classes/Roof.js"
+import Card from "./assets/classes/Card.js";
 import TreeStem from "./assets/classes/TreeStem.js"
 import TreeLeaf from "./assets/classes/TreeLeaf.js"
 import BushBig from "./assets/classes/BushBig.js";
 import BushSmall from "./assets/classes/BushSmall.js";
 import Rocks from "./assets/classes/Rocks.js";
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js'
+import { FontLoader } from 'three/examples/jsm/loaders/FontLoader.js';
+import { TextGeometry } from 'three/examples/jsm/geometries/TextGeometry.js'
 
 // Create scene
 const scene = new THREE.Scene();
+
+// Font loader
+const fontLoader = new FontLoader();
 
 // Create camera
 const camera = new THREE.PerspectiveCamera( 75, window.innerWidth / window.innerHeight, 0.1, 1000 );
@@ -42,6 +48,30 @@ scene.add( pointLightHelper );
 // Create firstGeometry
 let houseBase = new HouseBase(0, 0.5, 0, 1, 0x00ff00);
 scene.add(houseBase.mesh);
+
+// Create name card
+let card = new Card(0.46, 0.8, 0, 1, 0x00ff00);
+scene.add(card.mesh);
+
+// Load in text
+fontLoader.load( 'assets/fonts/Roboto_Regular.json', function ( font ) {
+    const textGeometry = new TextGeometry( "Lukas's", {
+        font: font,
+        size: 0.05,
+        height: 0.005,
+        curveSegments: 12,
+        bevelEnabled: true,
+        bevelThickness: 0.01,
+        bevelSize: 0.01,
+        bevelOffset: 0,
+        bevelSegments: 5
+    } );
+    const textMaterial = new THREE.MeshLambertMaterial( { color: 0xFF0000 } );
+    const textMesh = new THREE.Mesh( textGeometry, textMaterial );
+    textMesh.position.set(0.51, 0.775, 0.1);
+    textMesh.rotation.y = Math.PI / 2;
+    scene.add( textMesh );
+});
 
 // Add sky around the scene
 const skyGeometry = new THREE.SphereGeometry( 30, 32, 32 );
