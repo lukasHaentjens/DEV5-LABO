@@ -1,3 +1,8 @@
+import Asos from "./Asos.js";
+
+const asos = new Asos('x');
+asos.getClothes();
+
 export default class Weather {
     constructor(api_key) {
         this.apiKey = api_key;
@@ -31,7 +36,7 @@ export default class Weather {
 
         title.innerHTML = data.current.condition.text;
 
-        this.weather = data.text;
+        this.weather = data.current.condition.text;
         console.log("Display weather function " + this.weather);
     }
 }
