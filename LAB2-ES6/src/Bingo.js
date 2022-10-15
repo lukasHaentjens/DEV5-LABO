@@ -1,4 +1,4 @@
-import Card from "./card.js";
+import Card from "./Card.js";
 
 // 🔥🔥🔥 TODO 1 - make sure to export the class, if you want to be able to import the class elsewhere
 export default class Bingo {
