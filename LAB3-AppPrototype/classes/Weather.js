@@ -24,13 +24,22 @@ export default class Weather {
         const lon = position.coords.longitude;
 
         const url = `https://api.weatherapi.com/v1/current.json?key=${this.apiKey}&q=${lat},${lon}&aqi=no`;
-        console.log(url);
-        fetch(url)
-            .then(response => response.json())
-            .then(data => {
-                console.log(data);
-                this.weatherDisplay(data);
-            });
+
+        // check if location is saved in Local Storage
+        if (localStorage.getItem('weather') && Date.now() - localStorage.getItem('weatherTime') < 1000 * 60 * 60) {
+            // get weather from local storage
+            const weather = JSON.parse(localStorage.getItem('weather'));
+            this.weatherDisplay(weather);
+        }else {
+            fetch(url)
+                .then(response => response.json())
+                .then(data => {
+                    console.log(data);
+                    // save weather to local storage
+                    localStorage.setItem('weather', JSON.stringify(data));
+                    this.weatherDisplay(data);
+                });
+        }
     }
     weatherDisplay(data) {
         const title = document.querySelector('.weather--status');
