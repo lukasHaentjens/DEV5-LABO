@@ -17,7 +17,7 @@ export default class Amazon {
 
         fetch('https://amazon-product-reviews-keywords.p.rapidapi.com/product/details?asin=B07ZPKR714&country=US', options)
             .then(response => response.json())
-            .then(response => console.log(response))
+            .then(data => console.log(data.product.title))
             .catch(err => console.error(err));
     }
 }
