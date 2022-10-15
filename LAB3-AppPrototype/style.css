@@ -85,6 +85,35 @@ button:focus-visible {
 #app {
   display: flex;
   flex-direction: column;
+  width: 300px;
+  height: 250px;
+  background-color: #1a1a1a;
+  padding: 0;
+  overflow: hidden;
+}
+h1 {
+  font-size: 1.5em;
+  line-height: 1.1;
+  margin: 0;
+}
+h2 {
+  font-size: 1.2em;
+  line-height: 1.1;
+  margin: 0;
+}
+p {
+  font-size: 0.8em;
+  line-height: 1.1;
+  margin: 0 0 1em;
+}
+img {
+  max-width: 100%;
+  max-height: 100%;
+}
+a {
+  color: #646cff;
+  text-decoration: none;
+  top: 30px;
 }
 
 @media (prefers-color-scheme: light) {
