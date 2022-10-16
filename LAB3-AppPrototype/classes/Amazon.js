@@ -1,11 +1,11 @@
 export default class Amazon {
     constructor(api_key, weather) {
         this.apiKey = api_key;
-        this.getClothes(weather);
+        this.getItem(weather);
         console.log("Asos class initialized" + this.apiKey);
     }
 
-    getClothes(weather) {
+    getItem(weather) {
         switch (weather) {
             case "Clear":
                 this.keyWord = "Sunscreen";

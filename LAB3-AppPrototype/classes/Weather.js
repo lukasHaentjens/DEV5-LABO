@@ -48,9 +48,9 @@ export default class Weather {
         this.weather = data.current.condition.text;
         console.log("Display weather function " + this.weather);
 
-        this.getClothes(this.weather);
+        this.getItem(this.weather);
     }
-    getClothes(weather) {
+    getItem(weather) {
         const amazon = new Amazon('8bad7b9159mshe64915501abe39bp17e52bjsn11ce99767a19', weather);
     }
 }
