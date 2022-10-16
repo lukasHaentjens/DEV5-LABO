@@ -1,7 +1,7 @@
 import Amazon from "./Amazon.js";
 
 const amazon = new Amazon('8bad7b9159mshe64915501abe39bp17e52bjsn11ce99767a19');
-amazon.getClothes();
+amazon.getItem();
 
 export default class Weather {
     constructor(api_key) {
