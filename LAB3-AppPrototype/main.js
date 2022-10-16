@@ -1,5 +1,5 @@
 import './style.css'
 import Weather from './classes/Weather.js';
 
-const weather = new Weather('aa0a9d84c4da4a7bab862936220510');
+const weather = new Weather('5f04b79cf6a045079b3100717221610');
 weather.weatherDisplay();
