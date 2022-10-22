@@ -35,7 +35,7 @@ let grass;
 const gltfLoader = new GLTFLoader();
 gltfLoader.load(
     // resource URL
-    'assets/models/grass-2/scene.gltf',
+    'assets/models/grass/scene.gltf',
     // called when the resource is loaded
     ( gltf ) => {
         gltf.scene.position.set(1,0,0);
