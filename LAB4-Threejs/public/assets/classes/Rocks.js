@@ -1,7 +1,7 @@
 import * as THREE from 'three'
 
-import RockBig from './RockBig'
-import RockSmall from './RockSmall'
+import RockBig from './RockBig.js'
+import RockSmall from './RockSmall.js'
 
 export default class Rocks {
     constructor() {

@@ -1,5 +1,5 @@
 import * as THREE from 'three';
-import Cloud from './Cloud';
+import Cloud from './Cloud.js';
 
 export default class Clouds {
     constructor() {

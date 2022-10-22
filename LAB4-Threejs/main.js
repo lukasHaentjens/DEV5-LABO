@@ -1,14 +1,14 @@
 import './style.css'
 import * as THREE from 'three'
-import HouseBase from './assets/classes/HouseBase.js'
-import Roof from "./assets/classes/Roof.js"
-import Card from "./assets/classes/Card.js"
-import TreeStem from "./assets/classes/TreeStem.js"
-import TreeLeaf from "./assets/classes/TreeLeaf.js"
-import BushBig from "./assets/classes/BushBig.js"
-import BushSmall from "./assets/classes/BushSmall.js"
-import Rocks from "./assets/classes/Rocks.js"
-import Clouds from "./assets/classes/Clouds.js"
+import HouseBase from './public/assets/classes/HouseBase.js'
+import Roof from "./public/assets/classes/Roof.js"
+import Card from "./public/assets/classes/Card.js"
+import TreeStem from "./public/assets/classes/TreeStem.js"
+import TreeLeaf from "./public/assets/classes/TreeLeaf.js"
+import BushBig from "./public/assets/classes/BushBig.js"
+import BushSmall from "./public/assets/classes/BushSmall.js"
+import Rocks from "./public/assets/classes/Rocks.js"
+import Clouds from "./public/assets/classes/Clouds.js"
 import {GLTFLoader} from "three/examples/jsm/loaders/GLTFLoader"
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js'
 import { FontLoader } from 'three/examples/jsm/loaders/FontLoader.js'
