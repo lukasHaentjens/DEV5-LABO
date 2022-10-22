@@ -76,7 +76,7 @@ scene.add(card.mesh);
 
 // Load in text
 fontLoader.load( 'assets/fonts/roboto.json', function ( font ) {
-    const textGeometry = new TextGeometry( "Lukas's", {
+    const textGeometry = new TextGeometry( "Lukas'", {
         font: font,
         size: 0.05,
         height: 0.005,
