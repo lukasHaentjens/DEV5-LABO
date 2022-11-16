@@ -1,4 +1,5 @@
 body {
   margin: 0;
-    font-family: AppleSystemUIFont, Helvetica, Arial, sans-serif;
+  font-family: AppleSystemUIFont, Helvetica, Arial, sans-serif;
+  overflow: hidden;
 }

@@ -36,6 +36,6 @@ onMounted(()=> {
 
 <style scoped>
 .tiktok__header {
-  height: 20vh;
+  height: 10vh;
 }
 </style>

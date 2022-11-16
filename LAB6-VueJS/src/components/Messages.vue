@@ -57,6 +57,7 @@ let data = {
 
 <template>
   <div class="comments">
+    <hr>
     <div class="comments__list">
       <ul class="comment__section">
           <li v-for="comment in commentData.comments" :key="comment.id">
@@ -65,21 +66,22 @@ let data = {
           </li>
       </ul>
     </div>
+    <hr>
     <div class="comment__inputs">
       <input type="text" v-model="commentValue" placeholder="Write your comment">
       <button @click="addComment">Send</button>
-  </div>
+    </div>
   </div>
 </template>
 
 <style scoped>
 .comments {
-  height: 80vh;
+  height: 90vh;
 }
 .comments__list {
   display: flex;
   flex-direction: column-reverse;
-  height: 70vh;
+  height: 80vh;
   overflow-y: scroll;
 }
 .comment__section {

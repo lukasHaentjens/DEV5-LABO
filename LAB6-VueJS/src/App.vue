@@ -1,5 +1,4 @@
 <script setup>
-import { ref } from 'vue'
 import 'animate.css';
 import VideoDetails from './components/VideoDetails.vue'
 import VideoPlayer from './components/VideoPlayer.vue'
@@ -21,10 +20,14 @@ import Messages from './components/Messages.vue'
 /* create grid */
 .app {
   display: grid;
-  grid-template-columns: 3fr 8fr;
+  grid-template-columns: 8fr 4fr;
 }
 /* elements in different columns */
 VideoPlayer {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  justify-content: center;
   grid-column: 1;
 }
 .sidebar {
