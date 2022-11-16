@@ -1,6 +1,19 @@
 <script setup>
 import {onMounted, reactive, ref} from 'vue'
 import 'animate.css';
+
+
+// fetch comments
+onMounted(() => {
+  const api_url = "https://lab5-p379.onrender.com/api/v1/messages/";
+  fetch(api_url)
+      .then(response => response.json())
+      .then(data => {
+        // set data to state
+        console.log(data);
+      })
+})
+
 </script>
 
 <template>
