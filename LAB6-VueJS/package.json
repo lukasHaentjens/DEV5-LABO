@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "animate.css": "^4.1.1",
+    "feather-icons": "^4.29.0",
     "vue": "^3.2.41"
   },
   "devDependencies": {
