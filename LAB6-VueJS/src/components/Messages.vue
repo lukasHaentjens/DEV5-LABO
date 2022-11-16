@@ -26,8 +26,8 @@ onMounted(() => {
       <div class="comment">
         <ul>
           <li v-for="comment in commentData.comments" :key="comment.id">
-            <h4>Username</h4>
-            <p>Comment</p>
+            <h4>{{ comment.user }}</h4>
+            <p>{{ comment.text }}</p>
           </li>
         </ul>
       </div>
