@@ -24,6 +24,8 @@ onMounted(() => {
     <div class="comments__header">
       <h3>Comments</h3>
       <div class="comment">
+        <input type="text">
+        <button @click="addComment">Send</button>
         <ul class="comment__section">
           <li v-for="comment in commentData.comments" :key="comment.id">
             <h4>{{ comment.user }}</h4>
