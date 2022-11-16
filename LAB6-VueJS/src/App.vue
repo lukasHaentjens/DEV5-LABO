@@ -3,6 +3,7 @@ import { ref } from 'vue'
 import 'animate.css';
 import VideoDetails from './components/VideoDetails.vue'
 import VideoPlayer from './components/VideoPlayer.vue'
+import Messages from './components/Messages.vue'
 </script>
 
 <template>
@@ -10,7 +11,7 @@ import VideoPlayer from './components/VideoPlayer.vue'
     <VideoPlayer />
     <div class="sidebar">
       <VideoDetails />
-      <Message />
+      <Messages />
     </div>
   </div>
 </template>
