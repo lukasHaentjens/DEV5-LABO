@@ -19,10 +19,15 @@ onMounted(() => {
 })
 const addComment = () => {
   console.log(commentValue.value);
+  commentData.comments.push({
+        user: 'Lukas',
+        text: commentValue.value
+      }
+  )
 
 let data = {
-user : 'Lukas',
-text : commentValue.value
+    user : 'Lukas',
+    text : commentValue.value
   }
   // add comment to api
   const api_url = "https://lab5-p379.onrender.com/api/v1/messages/";
