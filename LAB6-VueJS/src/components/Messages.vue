@@ -57,15 +57,14 @@ let data = {
 
 <template>
   <div class="comments">
-    <div class="comments__header">
-      <h3>Comments</h3>
-    </div>
-    <ul class="comment__section">
+    <div class="comments__list">
+      <ul class="comment__section">
           <li v-for="comment in commentData.comments" :key="comment.id">
             <h4>{{ comment.user }}</h4>
             <p>{{ comment.text }}</p>
           </li>
-    </ul>
+      </ul>
+    </div>
     <div class="comment__inputs">
       <input type="text" v-model="commentValue" placeholder="Write your comment">
       <button @click="addComment">Send</button>
@@ -77,25 +76,20 @@ let data = {
 .comments {
   height: 80vh;
 }
-.comments__header{
-  background-color: #f5f5f5;
+.comments__list {
   display: flex;
-  flex-direction: column;
+  flex-direction: column-reverse;
+  height: 70vh;
+  overflow-y: scroll;
 }
 .comment__section {
-  display: flex;
-  position: relative;
   list-style: none;
   padding: 0;
   margin: 0;
 }
 ul {
-  max-height: 70vh;
-  overflow-y: scroll;
-  position: relative;
-  top: 0;
-  overflow-x: hidden;
-  justify-content: flex-end;
-  flex-direction: column-reverse;
+  bottom: 0;
+  display: flex;
+  flex-flow: column;
 }
 </style>
