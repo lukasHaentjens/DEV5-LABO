@@ -16,6 +16,9 @@ onMounted(() => {
         commentData.comments = data;
       })
 })
+const addComment = () => {
+  console.log('test')
+}
 
 </script>
 
