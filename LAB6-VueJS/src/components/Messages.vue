@@ -79,6 +79,7 @@ let data = {
   height: 90vh;
 }
 .comments__list {
+  padding: 0 1em;
   display: flex;
   flex-direction: column-reverse;
   height: 80vh;
@@ -88,6 +89,13 @@ let data = {
   list-style: none;
   padding: 0;
   margin: 0;
+}
+.comment__inputs {
+  height: 5vh;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 1em;
 }
 ul {
   bottom: 0;
