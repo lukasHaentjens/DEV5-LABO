@@ -50,10 +50,6 @@ const nextVideo = () => {
   justify-content: center;
   background-color: black;
 }
-.animation {
-  animation-duration: 1s;
-  animation-fill-mode: both;
-}
   .controls {
     position: absolute;
     top: 0;

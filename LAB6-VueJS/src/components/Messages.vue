@@ -60,9 +60,10 @@ let data = {
     <hr>
     <div class="comments__list">
       <ul class="comment__section">
-          <li v-for="comment in commentData.comments" :key="comment.id">
-            <h4>{{ comment.user }}</h4>
-            <p>{{ comment.text }}</p>
+          <li class="comment" v-for="comment in commentData.comments" :key="comment.id">
+            <h4 class="comment__username">{{ comment.user }}</h4>
+            <p class="comment__detail">{{ comment.text }}</p>
+            <hr>
           </li>
       </ul>
     </div>
@@ -77,6 +78,22 @@ let data = {
 <style scoped>
 .comments {
   height: 90vh;
+}
+.comment {
+  padding: 1em 0 0 0;
+}
+.comment hr {
+  opacity: 10%;
+}
+.comment__username {
+  line-height: 1em;
+  padding: 0;
+  margin: 0;
+}
+.comment__detail {
+  line-height: 1em;
+  padding: 0.5em 0 1em 0;
+  margin: 0;
 }
 .comments__list {
   padding: 0 1em;
