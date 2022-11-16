@@ -2,6 +2,7 @@
 import {onMounted, reactive, ref} from 'vue'
 import 'animate.css';
 
+let commentData = reactive({comments: []})
 
 // fetch comments
 onMounted(() => {
@@ -11,6 +12,8 @@ onMounted(() => {
       .then(data => {
         // set data to state
         console.log(data);
+        // all comments
+        commentData.comments = data;
       })
 })
 
