@@ -38,4 +38,10 @@ onMounted(()=> {
 .tiktok__header {
   height: 10vh;
 }
+h3 {
+  padding-left: 1em;
+}
+p {
+  padding-left: 1em;
+}
 </style>
