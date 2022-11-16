@@ -19,6 +19,7 @@ onMounted(() => {
 })
 const addComment = () => {
   console.log(commentValue.value);
+
 let data = {
 user : 'Lukas',
 text : commentValue.value
@@ -32,6 +33,19 @@ text : commentValue.value
     },
     body: JSON.stringify(data)
   })
+      .then(response => response.json())
+      .then(data => {
+        // set data to state
+        console.log(data);
+        // all comments
+        commentData.comments.push(
+          {
+            id: data.id,
+            user: data.user,
+            text: data.text
+          }
+        );
+      })
 }
 
 </script>
