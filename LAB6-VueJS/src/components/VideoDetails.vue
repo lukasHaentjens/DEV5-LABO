@@ -23,7 +23,7 @@ onMounted(()=> {
 
 </script>
 <template>
-  <div>
+  <div class="tiktok__header">
     <h3>
       {{ username }}
     </h3>
@@ -35,5 +35,7 @@ onMounted(()=> {
 </template>
 
 <style scoped>
-
+.tiktok__header {
+  height: 20vh;
+}
 </style>
