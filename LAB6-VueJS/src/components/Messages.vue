@@ -19,6 +19,10 @@ onMounted(() => {
 })
 const addComment = () => {
   console.log(commentValue.value);
+let data = {
+user : 'Lukas',
+text : commentValue.value
+  }
   // add comment to api
   const api_url = "https://lab5-p379.onrender.com/api/v1/messages/";
   fetch(api_url, {
@@ -26,8 +30,7 @@ const addComment = () => {
     headers: {
       'Content-Type': 'application/json'
     },
-    body: JSON.stringify({
-  })
+    body: JSON.stringify(data)
   })
 }
 
