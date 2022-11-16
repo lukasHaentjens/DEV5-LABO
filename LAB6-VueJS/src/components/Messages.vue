@@ -1,6 +1,6 @@
 <script setup>
 import {onMounted, reactive, ref} from 'vue'
-
+import 'animate.css';
 </script>
 
 <template>
