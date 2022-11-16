@@ -45,6 +45,10 @@ const nextVideo = () => {
 .video {
   position: relative;
   height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: black;
 }
 .animation {
   animation-duration: 1s;
