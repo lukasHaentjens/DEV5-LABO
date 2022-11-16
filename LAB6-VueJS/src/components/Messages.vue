@@ -2,6 +2,7 @@
 import {onMounted, reactive, ref} from 'vue'
 import 'animate.css';
 
+let commentValue = ref('')
 let commentData = reactive({comments: []})
 
 // fetch comments
@@ -17,7 +18,7 @@ onMounted(() => {
       })
 })
 const addComment = () => {
-  console.log('test')
+  console.log(commentValue.value)
 }
 
 </script>
@@ -27,7 +28,7 @@ const addComment = () => {
     <div class="comments__header">
       <h3>Comments</h3>
       <div class="comment">
-        <input type="text">
+        <input type="text" v-model="commentValue" placeholder="Write your comment">
         <button @click="addComment">Send</button>
         <ul class="comment__section">
           <li v-for="comment in commentData.comments" :key="comment.id">
