@@ -57,38 +57,52 @@ let data = {
 
 <template>
   <div class="comments">
-    <hr>
     <div class="comments__list">
       <ul class="comment__section">
           <li class="comment" v-for="comment in commentData.comments" :key="comment.id">
             <h4 class="comment__username">{{ comment.user }}</h4>
             <p class="comment__detail">{{ comment.text }}</p>
-            <hr>
           </li>
       </ul>
     </div>
-    <hr>
     <div class="comment__inputs">
-      <input type="text" v-model="commentValue" placeholder="Write your comment">
-      <button @click="addComment">Send</button>
+      <input class="comment__inputfield" type="text" v-model="commentValue" placeholder="Write your comment">
+      <button class="comment__button" @click="addComment">Send</button>
     </div>
   </div>
 </template>
 
 <style scoped>
 .comments {
-  height: 90vh;
+  height: 80vh;
+  background-color: #f9f9f9;
+  border-top: 1px solid #dddddd;
 }
 .comment {
   padding: 1em 0 0 0;
+  border-bottom: 1px solid #e6e6e6;
 }
-.comment hr {
-  opacity: 10%;
+.comment:last-child {
+  border-bottom: none;
 }
 .comment__username {
   line-height: 1em;
   padding: 0;
   margin: 0;
+}
+.comment__inputfield {
+  width: 100%;
+  padding: 1em;
+  border: 1px solid #DDDDDD;
+}
+.comment__button {
+  padding: 1em;
+  background-color: #ffb0b3;
+  border: none;
+  cursor: pointer;
+}
+.comment__button:hover {
+  background-color: #ff8c8f;
 }
 .comment__detail {
   line-height: 1em;
@@ -99,7 +113,7 @@ let data = {
   padding: 0 1em;
   display: flex;
   flex-direction: column-reverse;
-  height: 80vh;
+  height: 70vh;
   overflow-y: scroll;
 }
 .comment__section {
@@ -108,7 +122,9 @@ let data = {
   margin: 0;
 }
 .comment__inputs {
-  height: 5vh;
+  border-top: 1px solid #dddddd;
+  background-color: #ffffff;
+  height: 10vh;
   display: flex;
   justify-content: space-between;
   align-items: center;

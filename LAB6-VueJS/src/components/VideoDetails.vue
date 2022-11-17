@@ -24,9 +24,9 @@ onMounted(()=> {
 </script>
 <template>
   <div class="tiktok__header">
-    <h3>
+    <h1>
       {{ username }}
-    </h3>
+    </h1>
     <p>
       {{ description }}
     </p>
@@ -36,10 +36,14 @@ onMounted(()=> {
 
 <style scoped>
 .tiktok__header {
-  height: 10vh;
+  height: 20vh;
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
 }
-h3 {
-  padding-left: 1em;
+h1 {
+  margin: 0;
+  padding: 0.5em;
 }
 p {
   padding-left: 1em;
